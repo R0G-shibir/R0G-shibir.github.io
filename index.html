@@ -3,9 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <title>Fuad | Personal Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head >
 <body>
-    Hello
+    <div id="particles-js"></div>
+    <div>
+        <img src="img/po.jpg" alt="Fuad's PP">
+    </div>
+    <div>
+        <h3>Hello, I'm </h3>
+        <h1>Fuad Ali </h1>
+        <h4><span class="rotating-text">Programmer,</span></h4>
+    </div>
+    <div>
+        <nav>
+            <a target="_blank" href="https://github.com/R0G-shibir">Github</a>
+            <a target="_blank" href="https://open.spotify.com/user/31oniwz6r4u5vprpd2dzbam3g724">Spotify</a>
+            <a target="_blank" href="https://www.reddit.com/user/Fantastic-Squirrel26/">Reddit</a>
+            <a target="_blank" href="https://tracker.gg/valorant/profile/riot/Falcon%23036/overview?platform=pc&playlist=competitive&season=9d85c932-4820-c060-09c3-668636d4df1b">Riot Games</a>
+            <a target="_blank" href="https://codeforces.com/profile/HAmas_44">Codeforce</a>
+        </nav>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+            "number": { "value": 80 },
+            "color": { "value": "#ffffff" },
+            "shape": { "type": "circle" },
+            "opacity": { "value": 0.5 },
+            "size": { "value": 3 },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 2
+            }
+        },
+        "interactivity": {
+            "events": {
+                "onhover": { "enable": true, "mode": "repulse" }
+            }
+        }
+    });
+    </script>
+    <script>
+        const textElement = document.querySelector(".rotating-text");
+        const phrases = ["Programmer", "Gamer", "Professionally Procrastinating"];
+        let index = 0;
+
+        setInterval(() => {
+            index = (index + 1) % phrases.length;
+            textElement.textContent = phrases[index];
+        }, 2000); // Swaps every 2 seconds
+</script>
 </body>
 </html>

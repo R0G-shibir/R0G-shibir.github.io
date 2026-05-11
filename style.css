@@ -1,0 +1,46 @@
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* This pushes the animation BEHIND your text */
+    background-color: #0d1117; /* Matches your background */
+}
+
+/* 1. The Background and Main Layout */
+body {
+    background-color: #0f172a; /* Dark Navy/Black */
+    color: white;              /* White Text */
+    font-family: sans-serif;
+    margin: 0;
+    height: 100vh;             /* Fill the whole screen height */
+    display: flex;             /* The magic alignment tool */
+    flex-direction: column;    /* Stack items top to bottom */
+    justify-content: center;   /* Center vertically */
+    align-items: center;       /* Center horizontally */
+    text-align: center;        /* Center text inside the boxes */
+}
+
+/* 2. The Profile Picture */
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;        /* Makes it a perfect circle */
+    border: 3px solid #38bdf8; /* Adds a nice blue ring */
+    margin-bottom: 20px;
+    object-fit: cover;         /* Prevents the image from stretching */
+}
+
+/* 3. The Links (Navigation) */
+nav a {
+    color: #38bdf8;            /* Blue link color */
+    text-decoration: none;     /* Removes the underline */
+    margin: 0 10px;            /* Adds space between links */
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: white;              /* Glows white when you mouse over */
+}
