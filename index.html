@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fuad | Personal Portal</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" >
 </head >
 <body>
     <div id="particles-js"></div>
@@ -13,16 +15,34 @@
     </div>
     <div>
         <h3>Hello, I'm </h3>
-        <h1>Fuad Ali </h1>
-        <h4><span class="rotating-text">Programmer,</span></h4>
+        <h1>Fuad Ali Bakul</h1>
+        <div class="animation-container">
+            <div class="flipper">
+                <div>Programmer</div>
+                <div>Gamer</div>
+                <div>Problem Solver</div>
+                <div>Procrastinator by passion</div>
+                <div>Programmer</div>
+            </div>
+        </div>
     </div>
     <div>
         <nav>
-            <a target="_blank" href="https://github.com/R0G-shibir">Github</a>
-            <a target="_blank" href="https://open.spotify.com/user/31oniwz6r4u5vprpd2dzbam3g724">Spotify</a>
-            <a target="_blank" href="https://www.reddit.com/user/Fantastic-Squirrel26/">Reddit</a>
-            <a target="_blank" href="https://tracker.gg/valorant/profile/riot/Falcon%23036/overview?platform=pc&playlist=competitive&season=9d85c932-4820-c060-09c3-668636d4df1b">Riot Games</a>
-            <a target="_blank" href="https://codeforces.com/profile/HAmas_44">Codeforce</a>
+            <a target="_blank" href="https://github.com/R0G-shibir" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a target="_blank" href="https://open.spotify.com/user/31oniwz6r4u5vprpd2dzbam3g724" title="Spotify">
+                <i class="fa-brands fa-spotify"></i>
+            </a>
+            <a target="_blank" href="https://www.reddit.com/user/Fantastic-Squirrel26/" title="Reddit">
+                <i class="fa-brands fa-reddit"></i>
+            </a>
+            <a target="_blank" href="https://tracker.gg/valorant/profile/riot/Falcon%23036/overview?platform=pc&playlist=competitive&season=9d85c932-4820-c060-09c3-668636d4df1b" title="Valorant">
+                <i class="fa-solid fa-gamepad"></i> 
+            </a>
+            <a target="_blank" href="https://codeforces.com/profile/HAmas_44" title="Codeforces">
+                <i class="fa-solid fa-code"></i> 
+            </a>
         </nav>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
@@ -53,15 +73,6 @@
         }
     });
     </script>
-    <script>
-        const textElement = document.querySelector(".rotating-text");
-        const phrases = ["Programmer", "Gamer", "Professionally Procrastinating"];
-        let index = 0;
-
-        setInterval(() => {
-            index = (index + 1) % phrases.length;
-            textElement.textContent = phrases[index];
-        }, 2000); // Swaps every 2 seconds
-</script>
+    
 </body>
 </html>
