@@ -1,47 +1,60 @@
-/*Background Layer */
-#particles-js {
-    position: fixed;                /* make bg fixed even if the page is moved or scroll*/
-    top: 0;                         /* full screen a bg set kortace*/
-    left: 0;                        /* full screen a bg set kortace*/
-    width: 100%;                    /* full screen a bg set kortace*/
-    height: 100%;                   /* full screen a bg set kortace*/
-    z-index: -1;                    /*effect ta sober niche jabe */
-    background-color: #0d1117;
+/* =========================================
+1. GLOBAL RESET & FONTS
+=========================================
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@900&display=swap');
+
+* {
+    box-sizing: border-box;
 }
 
-/*Page Layout */
 body {
-    margin: 0;                      /* body te ja ase seita bade baki sob white spacec hoi jabe*/
-    height: 100vh;                  /*viewpoint height fixed */
-    display: flex;                  /*aita sob allign korbe */
-    flex-direction: column;         /*aita sob allign korbe */
-    justify-content: center;        /*aita sob kisu center a bosabe*/
-    align-items: center;            /*aita sob kisu center a bosabe*/
-    text-align: center;             /*aita sob kisu center a bosabe*/
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     font-family: 'Montserrat', sans-serif;
     color: white;
-    background-color: #0d1117;
-    overflow-x: hidden;              /* scrool bar hide korar jonno*/
+    background-color: #0d1117; /* Dark GitHub-style theme */
+    overflow-x: hidden;
 }
 
-/*Profile Image */
+/* =========================================
+2. BACKGROUND LAYER (Particles)
+=========================================
+*/
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* =========================================
+3. PROFILE SECTION (Image & Headings)
+=========================================
+*/
 img {
     width: 150px;
     height: 150px;
-    border-radius: 50%;              /* img round korbe*/
+    border-radius: 50%;
     border: 3px solid #38bdf8;
-    object-fit: cover;               /*img jate screched na hoi*/
+    object-fit: cover;
     margin-bottom: 20px;
     box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
-    transition: 0.3s ease;           /*animation smoothness*/
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* animation that happens when hovering over image*/
+
 img:hover {  
-    transform: scale(1.05);          /*image 5% large korbe*/
+    transform: scale(1.05);
     box-shadow: 0 0 35px rgba(56, 189, 248, 0.5);
 }
 
-/*Headings */
 h3 {
     font-size: 1.2rem;
     font-weight: 700;
@@ -54,15 +67,20 @@ h1 {
     font-weight: 900;
     margin: 5px 0;
     letter-spacing: -1px;
+    z-index: 1;
 }
+
+/* =========================================
+4. ANIMATION (Text Flipper)
+=========================================
+*/
 .animation-container {
-    height: 50px;         /*50 pixel ar akta window banailam jeta te text show korbe*/
+    height: 50px;
     overflow: hidden;
-    position: relative; /*  */
+    position: relative;
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 900; 
     font-size: 1.8rem;
     color: #38bdf8;
@@ -71,7 +89,6 @@ h1 {
 .flipper {
     position: absolute;
     top: 0;
-    /* Use 10s or 12s - 10s feels a bit snappier for 5 items */
     animation: flip 10s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
 }
 
@@ -80,10 +97,8 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 900;
-    margin: 0;
-    padding: 0;
 }
+
 @keyframes flip {
     0%, 15% { top: 0; }               
     20%, 35% { top: -50px; }          
@@ -92,25 +107,97 @@ h1 {
     80%, 90% { top: -200px; }         
     100% { top: -200px; }             
 }
-/* Navigation */
+
+/* =========================================
+5. NAVIGATION (Social Icons)
+=========================================
+*/
 nav {
     margin-top: 30px;
     display: flex;
-    gap: 25px; /* Adds perfect spacing between icons */
+    gap: 25px;
+    z-index: 1;
 }
 
 nav a {
     color: #ffffff;
-    font-size: 1.5rem; /* Makes the logos nice and big */
+    font-size: 1.5rem;
     transition: transform 0.3s ease, color 0.3s ease;
     text-decoration: none;
 }
 
 nav a:hover {
-    color: #ffffff;
-    transform: translateY(-5px); /* Makes the logo "jump" slightly when you hover */
+    color: #38bdf8;
+    transform: translateY(-5px);
 }
 
-h1, h3, nav {
-    z-index: 1;
+/* =========================================
+6. THE ALGOLOG BUTTON (Integrated)
+=========================================
+*/
+.wrapper {
+    margin-top: 30px; 
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.cta {
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem; 
+    color: #38bdf8; 
+    background: rgba(56, 189, 248, 0.05); 
+    border: 1px solid rgba(56, 189, 248, 0.2); 
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: skewX(-15deg);
+}
+
+.cta:hover {
+    background: rgba(56, 189, 248, 0.12); 
+    border-color: #38bdf8; 
+    color: white; 
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2); 
+}
+
+.cta span {
+    transform: skewX(15deg); /* Counter-skews text to be upright */
+    display: inline-block;
+}
+
+.cta span:nth-child(2) {
+    width: 25px;
+    margin-left: 15px;
+    position: relative;
+    top: 2px;
+    transition: 0.5s;
+}
+
+.cta:hover span:nth-child(2) {
+    margin-left: 30px;
+}
+
+/* --- SVG & Keyframe Animations --- */
+svg { width: 35px; height: auto; }
+
+path.one { transition: 0.4s; transform: translateX(-60%); opacity: 0; }
+path.two { transition: 0.5s; transform: translateX(-30%); opacity: 0; }
+path.three { fill: #38bdf8; transition: 0.3s; }
+
+.cta:hover path.one, .cta:hover path.two {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+/* Sequence blinking effect */
+.cta:hover path.one { animation: color_anim 1s infinite 0.6s; }
+.cta:hover path.two { animation: color_anim 1s infinite 0.4s; }
+.cta:hover path.three { animation: color_anim 1s infinite 0.2s; }
+
+@keyframes color_anim {
+    0%, 100% { fill: #38bdf8; }
+    50% { fill: white; } 
 }
