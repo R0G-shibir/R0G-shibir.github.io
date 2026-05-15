@@ -3,9 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlgoLog</title>
+    <title>AlgoLog | Command Center</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
-    
+
+    <div class="portal-container">
+        <header>
+            <div class="header-main">
+                <h1>ALGO<span>LOG</span></h1>
+                <div class="system-status">
+                    <span class="pulse"></span> KERNEL_V3_STABLE
+                </div>
+            </div>
+            <p class="subtitle">// UNIVERSAL_SOLVE_REGISTRY // ENCRYPTED_UPLINK</p>
+        </header>
+
+        <section class="command-box">
+            <div class="input-row">
+                <select id="platform-select">
+                    <option value="codeforces">CODEFORCES (API)</option>
+                    <option value="leetcode">LEETCODE (PROXY)</option>
+                    <option value="cses">CSES (MANUAL)</option>
+                    <option value="vjudge">VJUDGE (MANUAL)</option>
+                </select>
+                <input type="text" id="user-handle" placeholder="Handle or Problem Count (e.g. 150)...">
+                <button id="sync-btn">SYNC_UPLINK</button>
+            </div>
+            <div id="terminal-output">// SYSTEM_READY: Awaiting data packets...</div>
+        </section>
+
+        <section id="dashboard" style="display: none;">
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <label>TOTAL_COMPLETED</label>
+                    <div id="total-counter" class="glow-text">0</div>
+                </div>
+                <div class="stat-card">
+                    <label>UNIQUE_TAGS</label>
+                    <div id="tag-counter" class="glow-text">0</div>
+                </div>
+                <div class="stat-card">
+                    <label>ACTIVE_NETWORKS</label>
+                    <div id="platform-list" class="small-text">--</div>
+                </div>
+            </div>
+
+            <div class="view-controls">
+                <button id="toggle-graph-btn" class="blue-x" onclick="toggleGraph()">×</button>
+                <button id="restore-graph-btn" class="restore-btn" onclick="toggleGraph()" style="display: none;">RESTORE_VISUALIZATION</button>
+            </div>
+
+            <div id="graph-wrapper">
+                <div id="bubble-graph"></div>
+                <div class="graph-overlay">
+                    <span>DRAG_NODES | SCROLL_ZOOM | DBL_CLICK_RESET</span>
+                </div>
+            </div>
+
+            <div class="data-table-wrapper">
+                <h3>// CENTRAL_DATABASE_LOG</h3>
+                <table id="main-table">
+                    <thead>
+                        <tr>
+                            <th>IDENTIFIER</th>
+                            <th>DATA_STREAM_SAMPLES</th>
+                            <th>VOLUME</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
